@@ -24,7 +24,7 @@ $app->group("/reloj/v1", function(\Slim\App $app){
 
         $data = new Data($this->db, $this->logger);
         foreach($rows AS $row){
-            $data->insertarRegistro($row->codigo, $row->reloj_serie, $row->fecha_hora);
+            $data->insertarRegistro($row);
         }
         
         return $response->withJson($result);
